@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 500,
+    "height": 400,
+    "title": "Inflation vs Gdp",
+    "data": {
+        "url": "../data/inflation_gdp.csv"
+    },
+    "transform": [{"filter": "datum.Year == 2017"}],
+    "mark": "circle",
+    "encoding": {
+        "x": {
+            "field": "gdp",
+            "type": "quantitative",
+            "axis": {"tickCount": 7},
+            "scale": {"type": "log", "domain": [100000000, 1000000000000000]}
+        },
+        "y": {
+            "field": "Inflation",
+            "type": "quantitative",
+            "axis": {"tickCount": 6},
+            "scale": {"type": "log", "domain": [1, 1000000]}
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "population",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Year", "type": "quantitative"},
+            {"field": "Inflation", "type": "quantitative"}
+        ]
+    }
+}

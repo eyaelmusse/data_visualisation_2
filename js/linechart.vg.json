@@ -1,0 +1,13 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": { "text": "Iinflation by Continent" },
+    "data": {
+        "url": "../data/inflation_by_continent.csv"
+    },
+    "mark": "line",
+    "encoding": {
+        "x": { "field": "Year", "type": "quantitative" },
+        "y": { "field": "Inflation", "type": "quantitative" },
+        "color": {"field": "Region", "type": "nominal"}
+    }
+}
