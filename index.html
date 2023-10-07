@@ -13,11 +13,16 @@
 <body>
   
 <div id="vis"></div>
+<div id="vis2"></div>
 
 <script type="text/javascript">
 
-  var spec2 = "js/inflation.vg.json";
-  vegaEmbed('#vis', spec2).then(function(result) {
+  var spec1 = "js/inflation.vg.json";
+  vegaEmbed('#vis', spec1).then(function(result) {
+  }).catch(console.error);
+
+  var spec2 = "js/bubblechart.vg.json";
+  vegaEmbed('#vis2', spec2).then(function(result) {
   }).catch(console.error);
   
 </script>
