@@ -1,38 +1,72 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 500,
-    "height": 400,
+    "width": 800,
+    "height": 600,
     "title": "Inflation vs Gdp",
     "data": {
-        "url": "../data/inflation_gdp.csv"
+      "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/inflation_gdp.csv"
     },
-    "transform": [{"filter": "datum.Year == 2017"}],
-    "mark": "circle",
+    "transform": [
+      {"filter": "datum.Year == '2017'"}
+    ],
     "encoding": {
-        "x": {
-            "field": "gdp",
-            "type": "quantitative",
-            "axis": {"tickCount": 7},
-            "scale": {"type": "log", "domain": [100000000, 1000000000000000]}
-        },
-        "y": {
-            "field": "Inflation",
-            "type": "quantitative",
-            "axis": {"tickCount": 6},
-            "scale": {"type": "log", "domain": [1, 1000000]}
-        },
-        "color": {
-            "field": "Country",
-            "type": "nominal"
-        },
-        "size": {
+      "x": {
+        "field": "gdp",
+        "type": "quantitative",
+        "title": "Gdp",
+        "axis": {"tickCount": 7},
+        "scale": {"type": "log", "domain": [100000000, 1000000000000000]}
+      },
+      "y": {
+        "field": "Inflation",
+        "type": "quantitative",
+        "axis": {"tickCount": 6},
+        "scale": {"type": "log", "domain": [1, 1000000]}
+      }
+    },
+    "layer": [
+      {
+        "mark": "circle",
+        "encoding": {
+          "size": {
             "field": "population",
-            "type": "quantitative"
-        },
-        "tooltip": [
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
+              "range": [10, 50, 150, 200, 300, 400]
+            },
+            "legend": {"format": ".1s"}
+          },
+          "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "North America",
+                "South America",
+                "Europe",
+                "Africa",
+                "Asia",
+                "Oceania"
+              ],
+              "range": [
+                "#e41a1c",
+                "#984ea3",
+                "#ff7f00",
+                "#a6cee3",
+                "#377eb8",
+                "#a65628"
+              ]
+            }
+          },
+          "opacity": {"value": 0.6},
+          "tooltip": [
             {"field": "Country", "type": "nominal"},
             {"field": "Year", "type": "quantitative"},
             {"field": "Inflation", "type": "quantitative"}
-        ]
-    }
-}
+          ]
+        }
+      }
+    ]
+  }
