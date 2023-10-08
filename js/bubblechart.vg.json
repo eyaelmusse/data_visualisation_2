@@ -123,7 +123,7 @@
             "color": {"value": "black"},
             "opacity": {
               "condition": {
-                "test": "datum['Country'] == 'China' || datum['Country'] == 'Singapore' || datum['Country'] == 'Australia' || datum['Country'] == 'New Zealand' || datum['Country'] == 'Italy' || datum['Country'] == 'Yemen' ||  datum['Country'] == 'United States'",
+                "test": "datum['Country'] == 'Venezuela, RB' || datum['Country'] == 'India' || datum['Country'] == 'China' || datum['Country'] == 'Congo, Dem. Rep.' || datum['Country'] == 'Mexico'",
                 "value": 1
               },
               "value": 0
