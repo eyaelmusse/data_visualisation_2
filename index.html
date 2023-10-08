@@ -35,14 +35,6 @@
     <!-- pure grid group -->
     <div class="pure-g">
       <div class="pure-u-1-1">
-        <div id="vis2" class="vis-container"></div>
-      </div>
-    </div>
-    <!-- end pure grid group -->
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-1">
         <div id="vis1" class="vis-container"></div>
       </div>
     </div>
@@ -53,11 +45,11 @@
 <script type="text/javascript">
 
   var spec1 = "js/inflation.vg.json";
-  vegaEmbed('#vis1', spec1).then(function(result) {
+  vegaEmbed('#vis1', spec1, { "actions": false }).then(function(result) {
   }).catch(console.error);
 
   var spec2 = "js/bubblechart.vg.json";
-  vegaEmbed('#vis2', spec2).then(function(result) {
+  vegaEmbed('#vis2', spec2, { "actions": false }).then(function(result) {
   }).catch(console.error);
   
 </script>
