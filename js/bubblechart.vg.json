@@ -105,7 +105,7 @@
           "tooltip": [
             {"field": "Country", "type": "nominal"},
             {"field": "Year", "type": "quantitative"},
-            {"field": "Inflation", "type": "quantitative"}
+            {"field": "Inflation", "type": "quantitative", "format": ".2f"}
           ]
         }
       },
@@ -123,7 +123,7 @@
             "color": {"value": "black"},
             "opacity": {
               "condition": {
-                "test": "datum['Country'] == 'Venezuela, RB' || datum['Country'] == 'India' || datum['Country'] == 'China' || datum['Country'] == 'Congo, Dem. Rep.' || datum['Country'] == 'Mexico'",
+                "test": "datum['Country'] == 'Venezuela, RB' || datum['Country'] == 'Argentina' || datum['Country'] == 'China' || datum['Country'] == 'Congo, Dem. Rep.' || datum['Country'] == 'Burundi'",
                 "value": 1
               },
               "value": 0
@@ -131,7 +131,7 @@
             "tooltip": [
                 {"field": "Country", "type": "nominal"},
                 {"field": "Year", "type": "quantitative"},
-                {"field": "Inflation", "type": "quantitative"}
+                {"field": "Inflation", "type": "quantitative", "format": ".2f"}
             ]
           }
       }
