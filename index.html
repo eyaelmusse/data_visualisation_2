@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Multiple Visualisations | An Example</title>
+    <title>Data Visualisation 2</title>
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
     <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
@@ -13,27 +13,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
     <!-- CSS file -->
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
-
-
 </head>
 
 <body>
-
     <div class="page">
 
-        <h2>Inflation</h2>
         <!-- pure grid group -->
         <div class="pure-g">
             <div class="pure-u-1-1">
-                <div id="vis2" class="vis-container"></div>
+            <h1>THE GLOBAL ECONOMY</h1>
+            <p>The global economy is a complex and interconnected system, with countries relying on each other for goods, services, and investment. It has been growing rapidly in recent decades, driven by globalization, technological innovation, and rising incomes in developing countries. However, the global economy is also vulnerable to shocks, such as pandemics, financial crises, and natural disasters. These shocks can have a significant impact on economic growth, employment, and living standards around the world.</p>
             </div>
         </div>
         <!-- end pure grid group -->
-        <br>
+
+        <!-- pure grid group -->
+        <div class="pure-g">
+            <div class="pure-u-2-3">
+            <div id="vis1" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-3">
+            <div class="description description-right">
+                <h2>International Trade</h2>
+                <p>Global economies rely on international trade to exchange goods and services across borders. This includes imports and exports of products, raw materials, and technology.</p>
+            </div>
+            </div>
+    
+        </div>
+        <!-- end pure grid group -->
+
+        <!-- <h2>Inflation</h2> -->
+        <!-- pure grid group -->
+        <!-- <div class="pure-g">
+            <div class="pure-u-1-1">
+                <div id="vis2" class="vis-container"></div>
+            </div>
+        </div> -->
+        <!-- end pure grid group -->
+        <!-- <br>
 
         <hr class="hr3">
 
@@ -41,20 +64,27 @@
             <div class="pure-u-1-1">
                 <div id="vis1" class="vis-container"></div>
             </div>
-        </div>
+        </div> -->
         <!-- end pure grid group -->
-        <br>
+        <!-- <br>
 
-        <hr class="hr3">
+        <hr class="hr3"> -->
     </div>
 
-
     <script type="text/javascript">
-        var spec1 = "js/inflation.vg.json";
-        vegaEmbed('#vis1', spec1, { "actions": false });
+        var specVis1 = "js/waterfallchart.vg.json";
+        var specVis2 = "js/bubblechart.vg.json";
 
-        var spec2 = "js/bubblechart.vg.json";
-        vegaEmbed('#vis2', spec2, { "actions": false });
+        vegaEmbed('#vis1', specVis1, { "actions": false });
+        vegaEmbed('#vis2', specVis2, { "actions": false });
+
+        vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+
+        vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
     </script>
 </body>
 

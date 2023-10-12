@@ -1,0 +1,120 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/trade-as-share-of-gdp.csv"
+    },
+    "width": 800,
+    "height": 450,
+    "title": "Trade's gdp share for the world between 2010 and 2021",
+    "transform": [
+      {"filter": "datum.Entity == 'World'"},
+      {"filter": "datum.Year >= 2010"},
+      {"sort": [{"field": "Year", "order": "ascending"}]},
+      {"calculate": "round(datum.sum * 100) / 100", "as": "sum"},
+      {"window": [{"op": "lead", "field": "Year", "as": "lead"}]},
+      {"window": [{"op": "lag", "field": "sum", "as": "previous_sum"}]},
+      {
+        "calculate": "datum.lead === null ? datum.Year : datum.lead",
+        "as": "lead"
+      },
+      {
+        "calculate": "datum.Year === '2010' ? 52.48 : datum.previous_sum",
+        "as": "previous_sum"
+      },
+      {
+        "calculate": "(datum.sum - datum.previous_sum > 0 ? '+' : '') + format(datum.sum - datum.previous_sum, '.2f')",
+        "as": "text_amount"
+      },
+      {
+        "calculate": "datum.sum > datum.previous_sum ? ((datum.sum - datum.previous_sum) / 2) + datum.previous_sum : datum.previous_sum - ((datum.previous_sum - datum.sum) / 2)",
+        "as": "center"
+      },
+      {"calculate": "round(datum.center * 100) / 100", "as": "center"},
+      {
+        "calculate": "datum.sum < datum.previous_sum ? datum.sum : ''",
+        "as": "sum_dec"
+      },
+      {
+        "calculate": "datum.Year == '2010' ? datum.previous_sum : datum.sum_dec",
+        "as": "sum_dec"
+      },
+      {
+        "calculate": "datum.sum > datum.previous_sum ? datum.sum : ''",
+        "as": "sum_inc"
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "sort": "ascending",
+        "axis": {"labelAngle": 0, "title": "Year"}
+      }
+    },
+    "layer": [
+      {
+        "mark": {"type": "bar", "size": 45},
+        "encoding": {
+          "y": {
+            "field": "previous_sum",
+            "type": "quantitative",
+            "title": "Amount",
+            "scale": {"domain": [50, 62]}
+          },
+          "y2": {"field": "sum"},
+          "color": {
+            "condition": [
+              {"test": "datum.sum < datum.previous_sum", "value": "#f78a64"}
+            ],
+            "value": "#93c4aa"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "rule",
+          "color": "#404040",
+          "opacity": 1,
+          "strokeWidth": 2,
+          "xOffset": -22.5,
+          "x2Offset": 22.5
+        },
+        "encoding": {
+          "x2": {"field": "lead"},
+          "y": {"field": "sum", "type": "quantitative"}
+        }
+      },
+      {
+        "mark": {"type": "text", "dy": -4, "baseline": "bottom"},
+        "encoding": {
+          "y": {"field": "sum_inc", "type": "quantitative"},
+          "text": {"field": "sum_inc", "type": "nominal"}
+        }
+      },
+      {
+        "mark": {"type": "text", "dy": 4, "baseline": "top"},
+        "encoding": {
+          "y": {"field": "sum_dec", "type": "quantitative"},
+          "text": {"field": "sum_dec", "type": "nominal"}
+        }
+      },
+      {
+        "mark": {"type": "text", "fontWeight": "bold", "baseline": "middle"},
+        "encoding": {
+          "y": {"field": "center", "type": "quantitative"},
+          "text": {"field": "text_amount", "type": "nominal"},
+          "color": {
+            "condition": [
+              {
+                "test": "datum.label === 'Begin' || datum.label === 'End'",
+                "value": "#725a30"
+              }
+            ],
+            "value": "white"
+          }
+        }
+      }
+    ],
+    "config": {"text": {"fontWeight": "bold", "color": "#404040"}}
+  }
+  
