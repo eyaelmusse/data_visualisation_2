@@ -49,23 +49,23 @@
         <!-- end pure grid group -->
 
         <!-- pure grid group -->
-    <div class="pure-g">
-        <div class="pure-u-1-3">
-          <div class="description description-left">
-            <h2>Strong Economies</h2>
-            <p>
-                The countries with the strongest economies in the world are typically large, developed countries with a diversified range of industries. These countries have a strong track record of economic growth and innovation, and they offer a high standard of living to their citizens. The economies of different continents are also interconnected, meaning that economic shocks in one continent can have a ripple effect on other continents.</p>
-          </div>
+        <div class="pure-g">
+            <div class="pure-u-1-3">
+            <div class="description description-left">
+                <h2>Strong Economies</h2>
+                <p>
+                    The countries with the strongest economies in the world are typically large, developed countries with a diversified range of industries. These countries have a strong track record of economic growth and innovation, and they offer a high standard of living to their citizens. The economies of different continents are also interconnected, meaning that economic shocks in one continent can have a ripple effect on other continents.</p>
+            </div>
+            </div>
+            <div class="pure-u-1-3">
+            <div id="vis2" class="vis-container"></div>
+            </div>
+            <div class="pure-u-1-3" style="width: 31.5%;">
+            <div id="vis3" class="vis-container" style="margin-left: 15px;"></div>
+            </div>
+    
         </div>
-        <div class="pure-u-1-3">
-          <div id="vis2" class="vis-container"></div>
-        </div>
-        <div class="pure-u-1-3" style="width: 31.5%;">
-          <div id="vis3" class="vis-container" style="margin-left: 15px;"></div>
-        </div>
-  
-      </div>
-      <!-- end pure grid group -->
+        <!-- end pure grid group -->
 
     </div>
 
@@ -73,10 +73,6 @@
         var specVis1 = "js/waterfallchart.vg.json";
         var specVis2 = "js/rankingchart.vg.json";
         var specVis3 = "js/linechart.vg.json";
-
-        vegaEmbed('#vis1', specVis1, { "actions": false });
-        vegaEmbed('#vis2', specVis2, { "actions": false });
-        vegaEmbed('#vis3', specVis3, { "actions": false });
 
         vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
