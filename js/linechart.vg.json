@@ -1,14 +1,26 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": { "text": "Iinflation by Continent" },
+    "title": { "text": "Inflation by Continent" },
     "data": {
         "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/inflation_by_continent.csv"
     },
     "width": "container",
-    "mark": "line",
+    "transform": [
+        {"calculate": "{'Africa (Region)': 'Africa', 'Asia and Pacific': 'Asia', 'Europe': 'Europe', 'Middle East (Region)': 'Middle East', 'Western Hemisphere (Region)': 'West Hem.'}[datum.Region]", "as": "Region"}
+    ],
+    "mark": {
+        "type": "line",
+        "interpolate": "monotone"
+    },
     "encoding": {
         "x": { "field": "Year", "type": "quantitative" },
         "y": { "field": "Inflation", "type": "quantitative" },
-        "color": {"field": "Region", "type": "nominal"}
+        "color": {
+            "field": "Region", 
+            "type": "nominal",
+            "legend":{"orient": "none", "legendX":130, "legendY":5}
+        }
     }
 }
+
+
