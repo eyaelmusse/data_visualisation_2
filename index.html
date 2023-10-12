@@ -71,12 +71,10 @@
 
     <script type="text/javascript">
         var specVis1 = "js/waterfallchart.vg.json";
-        var specVis2 = "js/rankingchart.vg.json";
+        var specVis2 = "js/rankchart.vg.json";
         var specVis3 = "js/linechart.vg.json";
 
-        vegaEmbed('#vis1', specVis1, { "actions": false }).then(function (result) {
-        // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-        }).catch(console.error);
+        vegaEmbed('#vis1', specVis1, { "actions": false });
 
         vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
         // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view

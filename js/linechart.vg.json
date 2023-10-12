@@ -2,7 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": { "text": "Iinflation by Continent" },
     "data": {
-        "url": "../data/inflation_by_continent.csv"
+        "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/inflation_by_continent.csv"
     },
     "width": "container",
     "mark": "line",
