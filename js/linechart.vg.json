@@ -4,6 +4,7 @@
     "data": {
         "url": "../data/inflation_by_continent.csv"
     },
+    "width": "container",
     "mark": "line",
     "encoding": {
         "x": { "field": "Year", "type": "quantitative" },

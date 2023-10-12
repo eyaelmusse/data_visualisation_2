@@ -7,6 +7,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/economic-complexity-rankings.csv"
     },
+    "width": "container",
     "transform": [
       {"filter": {"field": "Entity", "oneOf": ["Switzerland", "Japan", "Singapore", "South Korea", "Germany", "Sweden"]}},
       {"filter": "datum.Year >= '2010'"}
