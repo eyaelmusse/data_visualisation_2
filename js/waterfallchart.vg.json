@@ -3,8 +3,7 @@
     "data": {
       "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/trade-as-share-of-gdp.csv"
     },
-    "width": 800,
-    "height": 450,
+    "width": "container",
     "title": "Trade's gdp share for the world between 2010 and 2021",
     "transform": [
       {"filter": "datum.Entity == 'World'"},
