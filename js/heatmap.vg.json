@@ -9,22 +9,7 @@
       {"name": "width", "update": "step * 52 + offset * 11"},
       {"name": "height", "update": "step * 5"},
       {
-        "name": "scheme", "value": "pinkyellowgreen",
-        "bind": {
-          "input": "select",
-          "options": [
-            "pinkyellowgreen",
-            "blueorange",
-            "brownbluegreen",
-            "purplegreen",
-            "purpleorange",
-            "redblue",
-            "redgrey",
-            "redyellowblue",
-            "redyellowgreen",
-            "spectral"
-          ]
-        }
+        "name": "scheme", "value": "blueorange"
       }
     ],
   
