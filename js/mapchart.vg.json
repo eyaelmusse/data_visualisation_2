@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Inflation Rate Throughout the World",
   "projection": {"type": "equalEarth"},
-  "width": 600,
+  "width": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/js/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
@@ -24,13 +24,6 @@
         "format": {"type": "topojson", "feature": "oceans"}
       },
       "mark": {"type": "geoshape", "fill": "skyblue"}
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/js/ne_110m.json",
-        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
-      },
-      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
     },
     {
       "transform": [
@@ -62,6 +55,18 @@
           {"field": "Inflation", "type": "quantitative", "format": ".2f"}
         ]
       }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/js/ne_110m.json",
+        "format": {"type": "topojson", "feature": "ne_110m_graticules_30"}
+      },
+      "mark": {"type": "geoshape", "fill": null, "stroke": "lightgray"}
     }
-  ]
+  ],
+  "config": {
+    "view": {
+      "stroke": "transparent"
+    }
+  }
 }
