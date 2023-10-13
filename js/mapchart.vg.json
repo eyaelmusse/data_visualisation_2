@@ -3,6 +3,7 @@
   "title": "Inflation Rate Throughout the World",
   "projection": {"type": "equalEarth"},
   "width": "container",
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/js/ne_110m.json",
     "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
