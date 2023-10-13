@@ -2,6 +2,7 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Inflation vs Gdp",
     "width": "container",
+    "height": 300,
     "data": {
       "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/inflation_gdp.csv"
     },
@@ -75,8 +76,7 @@
               "type": "threshold",
               "domain": [1000000, 10000000, 50000000, 100000000, 500000000],
               "range": [10, 50, 150, 200, 300, 400]
-            },
-            "legend": {"format": ".1s"}
+            }
           },
           "color": {
             "field": "Continent",
