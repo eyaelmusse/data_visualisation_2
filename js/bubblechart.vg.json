@@ -67,7 +67,7 @@
     },
     "config": {
       "legend": {
-        "orient": "bottom",
+        "orient": "right",
         "legendX": 10,
         "legendY": 10,
         "direction": "vertical"
