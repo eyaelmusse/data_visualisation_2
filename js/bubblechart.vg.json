@@ -1,7 +1,7 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Inflation vs GDP",
-  
+    "width": "container",
     "height": 350,
     "data": {
       "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/inflation_gdp.csv"
