@@ -57,7 +57,7 @@
           "y": {
             "field": "previous_sum",
             "type": "quantitative",
-            "title": "Amount",
+            "title": "Trade Share (in %)",
             "scale": {"domain": [50, 62]}
           },
           "y2": {"field": "sum"},
