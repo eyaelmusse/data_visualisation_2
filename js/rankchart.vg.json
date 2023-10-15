@@ -1,24 +1,27 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": {
-      "text": "World Economic Ranking",
-      "frame": "bounds"
-    },
-    "data": {
-      "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/economic-complexity-rankings.csv"
-    },
-    "width": "container",
-    "transform": [
-      {"filter": {"field": "Entity", "oneOf": ["Switzerland", "Japan", "Singapore", "South Korea", "Germany", "Sweden"]}},
-      {"filter": "datum.Year >= '2010'"}
-    ],
-    "mark": {"type": "line", "orient": "vertical"},
-    "encoding": {
-      "x": {"field": "Year", "type": "quantitative"},
-      "y": {"field": "Rank", "type": "ordinal"},
-      "color": {
-        "field": "Entity", "type": "nominal"
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "World Economic Ranking",
+    "frame": "bounds"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/economic-complexity-rankings.csv"
+  },
+  "width": "container",
+  "transform": [
+    {"filter": {"field": "Entity", "oneOf": ["Switzerland", "Japan", "Singapore", "South Korea", "Germany", "Sweden"]}},
+    {"filter": "datum.Year >= '2010'"}
+  ],
+  "mark": {"type": "line", "orient": "vertical"},
+  "encoding": {
+    "x": {"field": "Year", "type": "quantitative"},
+    "y": {"field": "Rank", "type": "ordinal"},
+    "color": {
+      "field": "Entity", 
+      "type": "nominal", 
+      "scale": {
+        "range": ["red", "blue", "orange", "black", "magenta", "grey"]
       }
     }
   }
-  
+}
