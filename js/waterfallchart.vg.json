@@ -5,7 +5,7 @@
     },
     "width": "container",
     "height": 200,
-    "title": "Trade's gdp share for the world between 2010 and 2021",
+    "title": "Trade's Gdp Share Between 2010 and 2021",
     "transform": [
       {"filter": "datum.Entity == 'World'"},
       {"filter": "datum.Year >= 2010"},
