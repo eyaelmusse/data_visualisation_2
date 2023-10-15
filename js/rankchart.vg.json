@@ -14,7 +14,7 @@
   ],
   "mark": {"type": "line", "orient": "vertical"},
   "encoding": {
-    "x": {"field": "Year", "type": "quantitative"},
+    "x": {"field": "Year", "type": "ordinal"},
     "y": {"field": "Rank", "type": "ordinal"},
     "color": {
       "field": "Entity", 
