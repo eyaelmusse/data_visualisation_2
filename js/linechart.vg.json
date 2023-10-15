@@ -2,25 +2,47 @@
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": { "text": "Inflation by Continent" },
     "data": {
-        "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/inflation_by_continent.csv"
+      "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/data/inflation_by_continent.csv"
     },
     "width": "container",
     "transform": [
         {"calculate": "{'Africa (Region)': 'Africa', 'Asia and Pacific': 'Asia', 'Europe': 'Europe', 'Middle East (Region)': 'Middle East', 'Western Hemisphere (Region)': 'West Hem.'}[datum.Region]", "as": "Region"}
     ],
-    "mark": {
-        "type": "line",
-        "interpolate": "monotone"
-    },
     "encoding": {
-        "x": { "field": "Year", "type": "quantitative" },
-        "y": { "field": "Inflation", "type": "quantitative" },
-        "color": {
-            "field": "Region", 
-            "type": "nominal",
-            "legend":{"orient": "none", "legendX":130, "legendY":5}
+      "x": {"field": "Year", "type": "temporal"},
+      "y": {"field": "Inflation", "type": "quantitative"},
+      "color": {
+        "condition": {
+          "param": "hover",
+          "field":"Region",
+          "type":"nominal",
+          "legend":{"orient": "none", "legendX":330, "legendY":5}
+        },
+        "value": "grey"
+      },
+      "opacity": {
+        "condition": {
+          "param": "hover",
+          "value": 1
+        },
+        "value": 0.2
+      }
+    },
+    "layer": [{
+      "description": "transparent layer to make it easier to trigger selection",
+      "params": [{
+        "name": "hover",
+        "value": [{"Region": "AAPL"}],
+        "select": {
+          "type": "point",
+          "fields": ["Region"],
+          "on": "mouseover"
         }
-    }
-}
-
-
+      }],
+      "mark": {"type": "line", "strokeWidth": 8, "stroke": "transparent"}
+    }, {
+      "mark": "line"
+    }],
+    "config": {"view": {"stroke": null}}
+  }
+  
