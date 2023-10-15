@@ -2,7 +2,6 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Inflation Rate Throughout the World",
   "projection": {"type": "equalEarth"},
-  "width": 600,
   "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/eyaelmusse/data_visualisation_2/main/js/ne_110m.json",
@@ -49,7 +48,7 @@
             "domain": [0, 5, 10, 100],
             "range": ["#feedde", "#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
           },
-          "legend":{"orient": "right", "title": "Inflation \n(in %)"}
+          "legend":{"orient": "right", "title": "Inflation (in %)", "titleAlign": "center"}
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
