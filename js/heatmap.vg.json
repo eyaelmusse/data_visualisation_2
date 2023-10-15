@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega/v5.json",
-    "title": "Daily inflation changes between 2018 and 2023",
+    "title": "Daily Inflation Changes Between 2018 and 2023",
     "width": "container",
     "signals": [
       {"name": "step", "value": 16},
