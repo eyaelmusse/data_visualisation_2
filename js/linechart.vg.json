@@ -16,7 +16,7 @@
           "param": "hover",
           "field":"Region",
           "type":"nominal",
-          "legend":{"orient": "none", "legendX":330, "legendY":5}
+          "legend":{"orient": "none", "legendX":200, "legendY":5}
         },
         "value": "grey"
       },
@@ -32,7 +32,6 @@
       "description": "transparent layer to make it easier to trigger selection",
       "params": [{
         "name": "hover",
-        "value": [{"Region": "AAPL"}],
         "select": {
           "type": "point",
           "fields": ["Region"],
