@@ -55,7 +55,7 @@
         "field": "gdp",
         "type": "quantitative",
         "title": "Gdp",
-        "axis": {"tickCount": 7},
+        "axis": {"tickCount": 7, "format": ",.0f"},
         "scale": {"type": "log", "domain": [100000000, 1000000000000000]}
       },
       "y": {
