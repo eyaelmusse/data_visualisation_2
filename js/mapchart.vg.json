@@ -49,7 +49,7 @@
             "domain": [0, 5, 10, 100],
             "range": ["#feedde", "#fdbe85", "#fd8d3c", "#e6550d", "#a63603"]
           },
-          "legend":{"orient": "right", "title": "Inflation (in %)", "symbolSize": "container", "padding": 10}
+          "legend":{"orient": "bottom", "title": "Inflation (in %)", "symbolSize": "container", "padding": 10}
         },
         "tooltip": [
           {"field": "properties.NAME", "type": "nominal", "title": "Country"},
